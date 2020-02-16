@@ -1,1 +1,13 @@
-<p>home works!</p>
+<div class="container">
+
+    <mat-card class="post-card" *ngFor="let post of posts">
+        <mat-card-header>
+            <mat-card-title><a [routerLink]="['/post', post.id]">{{ post.titlePost }}</a></mat-card-title>
+        </mat-card-header>
+        <img [src]="post.imagePost" alt="">
+        <mat-card-content>
+            <p class="content">{{ post.contentPost }}</p>
+        </mat-card-content>
+    </mat-card>
+
+</div>
