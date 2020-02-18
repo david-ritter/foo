@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostI } from '../../../shared/models/post.interface';
+import { PostService } from '../../post/post.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +10,7 @@ import { PostI } from '../../../shared/models/post.interface';
 })
 export class HomeComponent implements OnInit {
 
-  posts: PostI[] = [
+/*   posts: PostI[] = [
     {
       id: '1',
       titlePost: 'Post One',
@@ -33,11 +35,15 @@ export class HomeComponent implements OnInit {
       contentPost: `Quisque in nisl lorem. In pellentesque interdum nibh lobortis ultrices. Sed tincidunt, elit sed lacinia lobortis, lectus nulla pretium elit, vitae iaculis nisi diam sit amet ex. In a nisl vitae eros elementum accumsan. Etiam eget augue ultricies, pharetra massa quis, tristique enim. Sed suscipit leo leo, quis facilisis turpis pharetra sed.`,
       imagePost: 'https://picsum.photos/200',    
     }
-  ];
+  ]; */
 
-  constructor() { }
+  posts$: Observable<PostI[]>
+
+  constructor(private postService: PostService) { }
 
   ngOnInit(): void {
+    //this.postService.getAllPost().subscribe(res => console.log('Posts: ', res));
+    this.posts$ = this.postService.getAllPost();
   }
 
 }

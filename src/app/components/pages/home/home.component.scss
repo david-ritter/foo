@@ -1,5 +1,5 @@
 .container{
-    background-color: lightgray;
+    //background-color: lightgray;
     padding: 25px 0 10px 0;
     display: grid;
     grid-template-columns: 24% 24% 24% 24%;
@@ -31,6 +31,25 @@
         } */
     }
 
+}
+
+
+.sport {
+    background-color: crimson;
+}
+
+.life {
+    background-color: blueviolet;
+}
+
+.style {
+    background-color: yellowgreen;
+}
+
+mat-chip{
+    min-height: 1rem;
+    padding: 9px;
+    color: white !important;
 }
 
 /* .example-card {

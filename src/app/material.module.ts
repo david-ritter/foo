@@ -8,6 +8,8 @@ import { MatIconModule }  from '@angular/material/icon';
 import { MatSidenavModule }  from '@angular/material/sidenav';
 import { MatListModule }  from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatChipsModule } from '@angular/material/chips';
 
 const modules = [
   MatCardModule, 
@@ -17,7 +19,9 @@ const modules = [
   MatIconModule, 
   MatSidenavModule, 
   MatListModule,
-  MatGridListModule
+  MatGridListModule,
+  MatProgressSpinnerModule,
+  MatChipsModule
 ];
 
 @NgModule({
