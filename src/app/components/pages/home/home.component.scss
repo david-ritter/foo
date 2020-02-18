@@ -1,5 +1,6 @@
 .container{
-    margin-top: 25px;
+    background-color: lightgray;
+    padding: 25px 0 10px 0;
     display: grid;
     grid-template-columns: 24% 24% 24% 24%;
     column-gap: 10px;
@@ -16,17 +17,27 @@
         background: #444;
         color: #fff;
         border-radius: 6px;
-        padding: 20px;
+        //padding: 20px;
         font-size: 150%;
 
         img {
             height: 200px;
         }
         
-        p.content {
+/*         p.content {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-        }
+        } */
     }
+
 }
+
+/* .example-card {
+    max-width: 400px;
+}
+    
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+} */

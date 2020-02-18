@@ -4,7 +4,7 @@
         <mat-card-header>
             <mat-card-title><a [routerLink]="['/post', post.id]">{{ post.titlePost }}</a></mat-card-title>
         </mat-card-header>
-        <img [src]="post.imagePost" alt="">
+        <img mat-card-image [src]="post.imagePost" alt="">
         <mat-card-content>
             <p class="content">{{ post.contentPost }}</p>
         </mat-card-content>
