@@ -47,4 +47,5 @@ Thumbs.db
 
 # UserData
 /src/environments/environment.ts
-
+.firebaserc
+firebase.json
