@@ -10,6 +10,8 @@ import { MatListModule }  from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 const modules = [
   MatCardModule, 
@@ -21,7 +23,9 @@ const modules = [
   MatListModule,
   MatGridListModule,
   MatProgressSpinnerModule,
-  MatChipsModule
+  MatChipsModule,
+  MatFormFieldModule,
+  MatInputModule
 ];
 
 @NgModule({

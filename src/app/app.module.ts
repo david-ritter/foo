@@ -9,11 +9,13 @@ import { PostComponent } from './components/post/post/post.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 /* FIREBASE */
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule, StorageBucket } from '@angular/fire/storage'
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 
 @NgModule({
@@ -31,7 +33,9 @@ import { environment } from 'src/environments/environment';
     MaterialModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    AngularFireAuthModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: StorageBucket, useValue: environment.storageBucket }
