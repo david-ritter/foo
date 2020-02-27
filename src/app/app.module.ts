@@ -18,6 +18,7 @@ import { AngularFireStorageModule, StorageBucket } from '@angular/fire/storage'
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { ContainerAppComponent } from './components/pages/container-app/container-app.component';
+import { ModalComponent } from './shared/components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ContainerAppComponent } from './components/pages/container-app/containe
     PostComponent,
     ToolbarComponent,
     ContainerAppComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ import { ContainerAppComponent } from './components/pages/container-app/containe
     AngularFireAuthModule,
     ReactiveFormsModule
   ],
+  entryComponents: [ModalComponent],
   providers: [
     { provide: StorageBucket, useValue: environment.storageBucket }
   ],
