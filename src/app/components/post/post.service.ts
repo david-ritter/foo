@@ -19,20 +19,20 @@ export class PostService {
     this.postCollection = afs.collection<PostI>('posts');
   }
 
-  getAllPost(): Observable<PostI[]>{
+  getAllPost(): Observable<PostI[]> {
     return this.postCollection.snapshotChanges().pipe(
-      map(actions => 
-          actions.map(a => {
-            const data = a.payload.doc.data() as PostI;
-            const id = a.payload.doc.id;
-            return {id, ...data};
-          }
+      map(actions =>
+        actions.map(a => {
+          const data = a.payload.doc.data() as PostI;
+          const id = a.payload.doc.id;
+          return { id, ...data };
+        }
         )
       )
     );
   }
 
-  getOnePost(id: PostI): Observable<PostI>{
+  getOnePost(id: PostI): Observable<PostI> {
     return this.afs.doc<PostI>(`posts/${id}`).valueChanges();
   }
 
@@ -40,8 +40,12 @@ export class PostService {
     return this.postCollection.doc(post.id).delete();
   }
 
-  updatePostById(post: PostI) {
-    return this.postCollection.doc(post.id).update(post);
+  updatePostById(post: PostI, image?: FileI) {
+    if (!image) {
+      return this.postCollection.doc(post.id).update(post);
+    } else {
+      return this.uploadImage(post, image);
+    }
   }
 
   private uploadImage(post: PostI, image: FileI) {
@@ -56,7 +60,7 @@ export class PostService {
     })).subscribe();
   }
 
-  public preAddAndUpdatePost(post: PostI, image: FileI):void {
+  public preAddAndUpdatePost(post: PostI, image: FileI): void {
     this.uploadImage(post, image);
   }
 
@@ -68,7 +72,11 @@ export class PostService {
       fileRef: this.filePath,
       imagePost: this.donwloadURL
     }
-    this.postCollection.add(postObj);
+    if(post.id){
+      return this.postCollection.doc(post.id).update(postObj);
+    }else{
+      return this.postCollection.add(postObj);
+    }
   }
 
 }

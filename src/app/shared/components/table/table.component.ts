@@ -5,7 +5,7 @@ import { MatSort } from '@angular/material/sort';
 import { PostService } from 'src/app/components/post/post.service';
 import { PostI } from '../../models/post.interface';
 import Swal from 'sweetalert2';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
 
 @Component({
@@ -46,7 +46,7 @@ export class TableComponent implements OnInit, AfterViewInit {
   }
 
   onEditPost(post: PostI){
-    console.log('Edited Post:', post);
+    this.openDialog(post);
   }
 
   onNewPost(){
@@ -64,8 +64,14 @@ export class TableComponent implements OnInit, AfterViewInit {
     this.dataSource.sort = this.sort;    
   }
 
-  openDialog():void {
-    const dialogRef = this.dialog.open(ModalComponent);
+  openDialog(post?: PostI): void {
+    const config: MatDialogConfig = {
+      data: {
+        message: post ? 'Edit Post' : 'New Post',
+        content: post
+      },
+    };
+    const dialogRef = this.dialog.open(ModalComponent, config);
     dialogRef.afterClosed().subscribe();
   }
 
