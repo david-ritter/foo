@@ -1,0 +1,55 @@
+.profile-card {
+  max-width: 100%;
+
+  .label {
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    position: relative;
+    margin: 20px;
+    text-align: center;
+    border-radius: 50%;
+
+    p {
+      position: absolute;
+      width: 100%;
+      background-color: rgba($color: #3f51b5, $alpha: 0.7);
+      color: white;
+      text-transform: uppercase;
+      transition: all, 0.5, ease;
+    }
+
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      display: block;
+      &:hover{
+          border: 2px solid #3f51b5;
+          cursor: pointer; 
+      }
+    }
+  }
+
+  .botton {
+    p {
+      bottom: -50%;
+    }
+
+    &:hover p{
+      bottom: 0%;
+    }
+  }
+
+  mat-card-header {
+    justify-content: center;
+  }
+
+  mat-form-field,
+  button[type=submit] {
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    //padding: 0.4rem;
+  }
+}
