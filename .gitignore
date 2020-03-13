@@ -46,6 +46,12 @@ testem.log
 Thumbs.db
 
 # UserData
-/src/environments/environment.ts
 .firebaserc
 firebase.json
+firestore.indexes.json
+firestore.rules
+storage.rules
+src/environments/environment.ts
+src/environments/environment.prod.ts
+.firebase/hosting.ZGlzdFxuZ0Jsb2c.cache
+public/index.html
